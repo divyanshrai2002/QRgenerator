@@ -1,5 +1,5 @@
 function generateQR(event) {
-  event.preventDefault(); // Stop form  reloading page
+  event.preventDefault();
 
   let qrText = document.getElementById("qrText").value.trim();
 
@@ -8,7 +8,7 @@ function generateQR(event) {
     return;
   }
 
-  // Free QR code API
+
   let qrAPI = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(qrText)}`;
 
   // Display QR code
@@ -16,6 +16,4 @@ function generateQR(event) {
     <img src="${qrAPI}" alt="QR Code">
   `;
 
-  // Hide the form after QR is generated
-  document.querySelector("form").style.display = "none";
 }
